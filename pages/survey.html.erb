@@ -18,86 +18,87 @@
       <hr class ="line">
       <h1 style="font-size: 25px" class = title>Fill out some information about the group (write NaN@osu.edu if student does not exist):<br></h1>
       <div class="box">
-      <form action="popGroupInfo"> 
-         <label for="groupID">Enter the group ID number:</label>
-         <input type="number" id="groupID" name="groupID">
-         <br><br>
-         <label for="student1">Enter student 1's e-mail:</label>
-         <input type="email" id="student1" name="student1">
-         <br><br>
-         <label for="student2">Enter student 2's e-mail:</label>
-         <input type="email" id="student2" name="student2">
-         <br><br>
-         <label for="student3">Enter student 3's e-mail:</label>
-         <input type="email" id="student3" name="student3">
-         <br><br>
-         <label for="student4">Enter student 4's e-mail:</label>
-         <input type="email" id="student4" name="student4">
-         <br><br>
-         <label for="student5">Enter student 5's e-mail:</label>
-         <input type="email" id="student5" name="student5">
-         <br><br>
-         <input type="submit" value="Submit">
-         <br>
-      </form>
-    </div>
+         <form action="popGroupInfo"> 
+            <label for="groupID">Enter the group ID number:</label>
+            <input type="number" id="groupID" name="groupID">
+            <br><br>
+            <label for="student1">Enter student 1's e-mail:</label>
+            <input type="email" id="student1" name="student1">
+            <br><br>
+            <label for="student2">Enter student 2's e-mail:</label>
+            <input type="email" id="student2" name="student2">
+            <br><br>
+            <label for="student3">Enter student 3's e-mail:</label>
+            <input type="email" id="student3" name="student3">
+            <br><br>
+            <label for="student4">Enter student 4's e-mail:</label>
+            <input type="email" id="student4" name="student4">
+            <br><br>
+            <label for="student5">Enter student 5's e-mail:</label>
+            <input type="email" id="student5" name="student5">
+            <br><br>
+            <input type="submit" value="Submit">
+            <br>
+         </form>
+      </div>
       <h2 style="font-size: 25px">Fill out the survey:</h2>
       <form action="popGroupData">
-      <table>
-         <tr>
-            <th></th>
-            <th>1<br>Uh oh- not there yet!</th>
-            <th>2<br>Getting there!</th>
-            <th>3<br>Well done -<br>you've got it!</th>
-            <th>4<br>Wow!<br>Simply amazing!</th>
-            <th>Score<br><br>(1-4)</th>
-         </tr>
-         <tr>
-            <td>Display</td>
-            <td>Display is cluttered and missing required information.</td>
-            <td>Display is cluttered, some sentences may be incomplete.</td>
-            <td>Display is organized, and sentences are complete. Some illustrations are incomplete.</td>
-            <td>Display is well organized, and sentences are complete. All illustrations are complete.</td>
-            <td>
-               <input type="number" id="displayScore">
-            </td>
-         </tr>
-         <tr>
-            <td>Organization</td>
-            <td>Student presents information out of order. It is unclear for the audience to understand.</td>
-            <td>Student presents some facts in order.</td>
-            <td>Student presents all of the facts in order and the audience can understand.</td>
-            <td>Student presents facts in a well thought out manner, and makes it enjoyable for the audience to listen.</td>
-            <td>
-                <input type="number" id="organizationScore">
-             </td>
-         </tr>
-         <tr>
-            <td>Eye Contact</td>
-            <td>Students eyes are only on the board. They do not make eye contact with the audience.</td>
-            <td>Student makes eye contact with the audience only 1 or 2 times.</td>
-            <td>Student makes eyes contact with the audience most of the presentation with reference to the board.</td>
-            <td>Student makes eyes contact with the audience for almost all of the presentation with little reference to the board.</td>
-            <td>
-                <input type="number" id="eyeContactScore">
-             </td>
-         </tr>
-         <tr>
-            <td>Voice</td>
-            <td>Voice is mumbled and quiet, making it hard for the audience to understand.</td>
-            <td>Student tries to project their voice and speak clearly, but is quiet at times.</td>
-            <td>Student projects their voice. They speak clearly and the audience can hear and understand.</td>
-            <td>Voice is clear and emergeing, using expression confidently.</td>
-            <td>
-                <input type="number" id="voiceScore">
-             </td>
-        </tr>
-      </table>
-      <br>
-      <label for="comments">Comments about the presentation:</label> <br>
-      <br>
-      <textarea id="comments" rows="3" cols="100" maxlength="65"></textarea><br>
-      <input type="submit" value="Submit">
+         <table>
+            <tr>
+               <th></th>
+               <th>1<br>Uh oh- not there yet!</th>
+               <th>2<br>Getting there!</th>
+               <th>3<br>Well done -<br>you've got it!</th>
+               <th>4<br>Wow!<br>Simply amazing!</th>
+               <th>Score<br><br>(1-4)</th>
+            </tr>
+            <tr>
+               <td>Display</td>
+               <td>Display is cluttered and missing required information.</td>
+               <td>Display is cluttered, some sentences may be incomplete.</td>
+               <td>Display is organized, and sentences are complete. Some illustrations are incomplete.</td>
+               <td>Display is well organized, and sentences are complete. All illustrations are complete.</td>
+               <td>
+                  <input type="number" id="displayScore">
+               </td>
+            </tr>
+            <tr>
+               <td>Organization</td>
+               <td>Student presents information out of order. It is unclear for the audience to understand.</td>
+               <td>Student presents some facts in order.</td>
+               <td>Student presents all of the facts in order and the audience can understand.</td>
+               <td>Student presents facts in a well thought out manner, and makes it enjoyable for the audience to listen.</td>
+               <td>
+                  <input type="number" id="organizationScore">
+               </td>
+            </tr>
+            <tr>
+               <td>Eye Contact</td>
+               <td>Students eyes are only on the board. They do not make eye contact with the audience.</td>
+               <td>Student makes eye contact with the audience only 1 or 2 times.</td>
+               <td>Student makes eyes contact with the audience most of the presentation with reference to the board.</td>
+               <td>Student makes eyes contact with the audience for almost all of the presentation with little reference to the board.</td>
+               <td>
+                  <input type="number" id="eyeContactScore">
+               </td>
+            </tr>
+            <tr>
+               <td>Voice</td>
+               <td>Voice is mumbled and quiet, making it hard for the audience to understand.</td>
+               <td>Student tries to project their voice and speak clearly, but is quiet at times.</td>
+               <td>Student projects their voice. They speak clearly and the audience can hear and understand.</td>
+               <td>Voice is clear and emergeing, using expression confidently.</td>
+               <td>
+                  <input type="number" id="voiceScore">
+               </td>
+            </tr>
+         </table>
+         <br>
+         <label for="comments">Comments about the presentation:</label> <br>
+         <br>
+         <textarea id="comments" rows="3" cols="100" maxlength="65"></textarea>
+         <br>
+         <input type="submit" value="Submit">
       </form>
    </body>
 </html>
