@@ -4,17 +4,17 @@
     <title>Login</title>
     <meta charset="UTF-8">
     <script src=""></script>
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <img class="osulogo" src="../resources/osulogo.png" alt="osulogo">
   </head>
   <body>
-    <h1 class ="title">Evaluation of Class Presentations</h1>
+    <h1 style="font-size: 25px">Evaluation of Class Presentations</h1>
     <hr class ="line">
     <div class="box">
-      <h2 class = "loginPrompt">Please enter your e-mail and password to login:</h1>
+      <h2 style="font-size: 20px" class = "loginPrompt">Please enter your e-mail and password to login:</h1>
       <form action="login"> <!--Authenticate user and load correct home page based on privs ()-->
-        <label for="email">Email address:</label>
-        <input type="email" id="email" name="email">
+        <label for="studentEmail">Email address:</label>
+        <input type="email" id="studentEmail" name="studentEmail">
         <br><br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password">
@@ -22,7 +22,6 @@
         <input type="submit" value="Login">
         <br>
       </form>
-      <p class="loginResult"id = "invalid"></p> <!--Use to print out login result (i.e "failed login try again, switch id to valid if valid login") -->
     </div>
       <hr class ="line">
       <p>Here you can view the results of your presentation, fill out the presentation surveys, and add/drop the class! To get started fill out the login with a valid e-mail and password. </p>

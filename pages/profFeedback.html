@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Feedback</title>
+      <meta charset="UTF-8">
+      <script src=""></script>
+      <link rel="stylesheet" href="../styles/style.css">
+   </head>
+   <body>
+      <img class="osulogo" src="../resources/osulogo.png" alt="osulogo">
+      <hr class ="line">
+      <div class="nav">
+         <a class="hover" href="../pages/createEvent.html">Create Event</a>
+         <a class="hover" href="../pages/profFeedback.html">Student Feedback</a>
+         <a class="hover" href="../pages/classRoster.html">Class Roster</a>
+         <a class="hover" href="../pages/login.html">Logout</a>
+      </div>
+      <hr class ="line">
+      <h1 style="font-size: 25px">Results from all of the presentations:<br></h1>
+      <table>
+         <tr>
+            <th></th>
+            <th>Mean Score</th>
+            <th>Median Score</th>
+            <th>Highest Score</th>
+            <th>Lowest score</th>
+            <th>Percent Above 2.5 Average Score</th>
+         </tr>
+         <tr>
+            <th>Display</th>
+            <th id ="disMean"></th>
+            <th id ="disMedian"></th>
+            <th id ="disHigh"></th>
+            <th id ="disLow"></th>
+            <th id ="disAbove"></th>
+         </tr>
+         <tr>
+            <th>Organization</th>
+            <th id ="orgMean"></th>
+            <th id ="orgMedian"></th>
+            <th id ="orgHigh"></th>
+            <th id ="orgLow"></th>
+            <th id ="orgAbove"></th>
+         </tr>
+         <tr>
+            <th>Eye Contact</th>
+            <th id ="eyeMean"></th>
+            <th id ="eyeMedian"></th>
+            <th id ="eyeHigh"></th>
+            <th id ="eyeLow"></th>
+            <th id ="eyeAbove"></th>
+         </tr>
+         <tr>
+            <th>Voice</th>
+            <th id ="voiceMean"></th>
+            <th id ="voiceMedian"></th>
+            <th id ="voiceHigh"></th>
+            <th id ="voiceLow"></th>
+            <th id ="voiceAbove"></th>
+         </tr>
+      </table>
+      <h2 style="font-size: 25px"></h2style>Enter a group's ID number to view their results: </h2>
+      <form action="getGroupData"></form>
+      <label for="groupID">Group ID:</label>
+      <input type="number" id="groupID" name="groupID"> <br><br>
+      <input type="submit" value="Submit"><br><br>
+      </form> 
+      <table>
+         <tr>
+            <th></th>
+            <th>Their score</th>
+            <th>Class average</th>
+            <th>Highest Score</th>
+            <th>Lowest score</th>
+            <th>Percent Above/below Average</th>
+         </tr>
+         <tr>
+            <th>Display</th>
+            <th id ="disScore"></th>
+            <th id ="disAvg"></th>
+            <th id ="disHigh"></th>
+            <th id ="disLow"></th>
+            <th id ="disComparedToAve"></th>
+         </tr>
+         <tr>
+            <th>Organization</th>
+            <th id ="orgScore"></th>
+            <th id ="orgAvg"></th>
+            <th id ="orgHigh"></th>
+            <th id ="orgLow"></th>
+            <th id ="orgComparedToAve"></th>
+         </tr>
+         <tr>
+            <th>Eye Contact</th>
+            <th id ="eyeScore"></th>
+            <th id ="eyeAvg"></th>
+            <th id ="eyeHigh"></th>
+            <th id ="eyeLow"></th>
+            <th id ="eyeComparedToAve"></th>
+         </tr>
+         <tr>
+            <th>Voice</th>
+            <th id ="voiceScore"></th>
+            <th id ="voiceAvg"></th>
+            <th id ="voiceHigh"></th>
+            <th id ="voiceLow"></th>
+            <th id ="voiceComparedToAve"></th>
+         </tr>
+         <tr>
+            <th>Their Average Score</th>
+            <th id ="totalAveScore"></th>
+         </tr>
+      </table>
+      <h4 style="font-size: 25px">Enter a number grade (0-100) for the students in the presenting group:<br></h4>
+      <div class="box">
+         <form action="popStudentGrades"> 
+            <label for="student1">Enter student 1's grade:</label>
+            <input type="number" id="student1Grade" name="student1Grade">
+            <br><br>
+            <label for="student2">Enter student 2's grade:</label>
+            <input type="number" id="student2Grade" name="student2Grade">
+            <br><br>
+            <label for="student3">Enter student 3's grade:</label>
+            <input type="number" id="student3Grade" name="student3Grade">
+            <br><br>
+            <label for="student4">Enter student 4's grade:</label>
+            <input type="number" id="student4Grade" name="student4Grade">
+            <br><br>
+            <label for="student5">Enter student 5's grade:</label>
+            <input type="number" id="student5Grade" name="student5Grade">
+            <br><br>
+            <input type="submit" value="Submit">
+            <br>
+         </form>
+      </div>
+      <h4 style="font-size: 25px">Comments other students made about their presentation:<br></h4>
+      <table class = "comments">
+         <tr>
+            <th>Commenter Number</th>
+            <th> Commenter e-mail</th>
+            <th>Comments:</th>
+         </tr>
+         <tr>
+            <th>1</th>
+            <th id = "commenter1Email"></th>
+            <th style="text-align: left; font-weight:400" id = "comment1">Good stuff man!</th>
+         </tr>
+         <tr>
+            <th>2</th>
+            <th id = "commenter2Email"></th>
+            <th style="text-align: left; font-weight:400" id = "comment2">Good stuff man!</th>
+         </tr>
+         <tr>
+            <th>3</th>
+            <th id = "commenter3Email"></th>
+            <th style="text-align: left; font-weight:400" id = "comment3">Good stuff man!</th>
+         </tr>
+         <tr>
+            <th>4</th>
+            <th id = "commenter4Email"></th>
+            <th style="text-align: left; font-weight:400" id = "comment4">Good stuff man!</th>
+         </tr>
+         <tr>
+            <th>5</th>
+            <th id = "commenter5Email"></th>
+            <th style="text-align: left; font-weight:400" id = "comment5">Good stuff man!</th>
+         </tr>
+         <tr>
+            <th>6</th>
+            <th id = "commenter6Email"></th>
+            <th style="text-align: left; font-weight:400" id = "comment6">Good stuff man!</th>
+         </tr>
+         <tr>
+            <th>7</th>
+            <th id = "commenter7Email"></th>
+            <th style="text-align: left; font-weight:400" id = "comment7">Good stuff man!</th>
+         </tr>
+         <tr>
+            <th>8</th>
+            <th id = "commenter8Email"></th>
+            <th style="text-align: left; font-weight:400" id = "comment8">Good stuff man!</th>
+         </tr>
+         <tr>
+            <th>9</th>
+            <th id = "commenter9Email"></th>
+            <th style="text-align: left; font-weight:400" id = "comment9">Good stuff man!</th>
+         </tr>
+         <tr>
+            <th>10</th>
+            <th id = "commenter10Email"></th>
+            <th style="text-align: left; font-weight:400" id = "comment10">Good stuff man!</th>
+         </tr>
+      </table>
+      <h4 style="font-size: 25px">Enter a number grade (0-100) for the students who wrote comments:<br></h4>
+      <div class="box">
+         <form action="popStudentGrades"> 
+            <label for="comment1Grade">Enter commenter 1's grade:</label>
+            <input type="number" id="comment1Grade" name="comment1Grade">
+            <br><br>
+            <label for="comment2Grade">Enter commenter 2's grade:</label>
+            <input type="number" id="comment2Grade" name="comment2Grade">
+            <br><br>
+            <label for="comment3Grade">Enter commenter 3's grade:</label>
+            <input type="number" id="comment3Grade" name="comment3Grade">
+            <br><br>
+            <label for="comment4Grade">Enter commenter 4's grade:</label>
+            <input type="number" id="comment4Grade" name="comment4Grade">
+            <br><br>
+            <label for="comment5Grade">Enter commenter 5's grade:</label>
+            <input type="number" id="comment5Grade" name="comment5Grade">
+            <br><br>
+            <label for="comment6Grade">Enter commenter 6's grade:</label>
+            <input type="number" id="comment6Grade" name="comment6Grade">
+            <br><br>
+            <label for="comment7Grade">Enter commenter 7's grade:</label>
+            <input type="number" id="comment7Grade" name="comment7Grade">
+            <br><br>
+            <label for="comment8Grade">Enter commenter 8's grade:</label>
+            <input type="number" id="comment8Grade" name="comment8Grade">
+            <br><br>
+            <label for="comment9Grade">Enter commenter 9's grade:</label>
+            <input type="number" id="comment9Grade" name="comment9Grade">
+            <br><br>
+            <label for="comment10Grade">Enter commenter 10's grade:</label>
+            <input type="number" id="comment10Grade" name="comment10Grade">
+            <br><br>
+            <input type="submit" value="Submit">
+            <br>
+         </form>
+      </div>
+   </body>
+</html>

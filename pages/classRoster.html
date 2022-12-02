@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Class Roster</title>
+    <meta charset="UTF-8">
+    <script src=""></script>
+    <link rel="stylesheet" href="../styles/style.css">
+  </head>
+  <body>
+    <img class="osulogo" src="../resources/osulogo.png" alt="osulogo">
+    <hr class ="line">
+    <div class="nav">
+      <a class="hover" href="../pages/createEvent.html">Create Event</a>
+      <a class="hover" href="../pages/profFeedback.html">Student Feedback</a>
+      <a class="hover" href="../pages/classRoster.html">Class Roster</a>
+      <a class="hover" href="../pages/login.html">Logout</a>
+    </div> 
+      <hr class ="line">
+      <h1 style="font-size: 25px">List of student currently in the class and their current grade for this assignment:<br></h1>
+         <table>
+            <tr>
+               <th>E-mail</th>
+               <th>Presentation Grade</th>
+               <th>Comment Grade</th>
+            </tr>
+            <tr>
+               <th id ="disHigh"></th>
+               <th id ="disLow"></th>
+               <th id ="disAbove"></th>
+            </tr>
+            <tr>
+               <th id ="orgHigh"></th>
+               <th id ="orgLow"></th>
+               <th id ="orgAbove"></th>
+            </tr>
+            <tr>
+            
+               <th id ="eyeHigh"></th>
+               <th id ="eyeLow"></th>
+               <th id ="eyeAbove"></th>
+            </tr>
+            <tr>
+               <th id ="voiceHigh"></th>
+               <th id ="voiceLow"></th>
+               <th id ="voiceAbove"></th>
+            </tr>
+         </table>
+         <form action="enrollStudent">
+         <h2 style="font-size: 25px">Please enter the email of the student you would like to enroll into your class:<br></h2>
+            <label for="studentAdd">@:</label>
+            <input type="text" id="studentAdd" name="studentAdd">
+            <br><br>
+            <input type="submit" value="Submit">
+         </form>
+            <h2 style="font-size: 25px">Please enter the email of the student you would like to drop from the class:<br></h2>
+            <form action="dropStudent">
+                   <label for="studentDrop">@:</label>
+                   <input type="text" id="studentDrop" name="studentDrop">
+                   <br><br>
+                   <input type="submit" value="Submit">
+                </form>
+
+  </body>
+</html>
+

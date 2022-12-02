@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Student Home</title>
+      <title>Survey</title>
       <meta charset="UTF-8">
       <script src=""></script>
-      <link rel="stylesheet" href="../styles/survey.css">
+      <link rel="stylesheet" href="../styles/style.css">
    </head>
    <body>
       <img class="osulogo" src="../resources/osulogo.png" alt="osulogo">
@@ -13,34 +13,35 @@
          <a class="hover" href="../pages/survey.html">Fill Out Survey</a>
          <a class="hover" href="../pages/studentFeedback.html">View Feedback</a>
          <a class="hover" href="../pages/studentEnrollment.html">Class Enrollment</a>
-         <a class="hover" href="../pages/home.html">Logout</a>
+         <a class="hover" href="../pages/login.html">Logout</a>
       </div>
       <hr class ="line">
+      <h1 style="font-size: 25px" class = title>Fill out some information about the group (write NaN@osu.edu if student does not exist):<br></h1>
       <div class="box">
-      <h1 class = title>Fill out some information about the group (write NaN@osu.edu if student does not exist):<br></h1>
       <form action="popGroupInfo"> 
-         <label for="number">Enter the group's ID number</label>
+         <label for="groupID">Enter the group ID number:</label>
          <input type="number" id="groupID" name="groupID">
          <br><br>
-         <label for="email">Enter student 1's e-mail:</label>
+         <label for="student1">Enter student 1's e-mail:</label>
          <input type="email" id="student1" name="student1">
          <br><br>
-         <label for="email">Enter student 2's e-mail:</label>
+         <label for="student2">Enter student 2's e-mail:</label>
          <input type="email" id="student2" name="student2">
          <br><br>
-         <label for="email">Enter student 3's e-mail:</label>
+         <label for="student3">Enter student 3's e-mail:</label>
          <input type="email" id="student3" name="student3">
          <br><br>
-         <label for="email">Enter student 4's e-mail:</label>
+         <label for="student4">Enter student 4's e-mail:</label>
          <input type="email" id="student4" name="student4">
+         <br><br>
+         <label for="student5">Enter student 5's e-mail:</label>
+         <input type="email" id="student5" name="student5">
          <br><br>
          <input type="submit" value="Submit">
          <br>
       </form>
     </div>
-      <h2>
-      Fill out the survey:</h1>
-      <div class ="box">
+      <h2 style="font-size: 25px">Fill out the survey:</h2>
       <form action="popGroupData">
       <table>
          <tr>
@@ -49,7 +50,7 @@
             <th>2<br>Getting there!</th>
             <th>3<br>Well done -<br>you've got it!</th>
             <th>4<br>Wow!<br>Simply amazing!</th>
-            <th>Score<br><br>(1-5)</th>
+            <th>Score<br><br>(1-4)</th>
          </tr>
          <tr>
             <td>Display</td>
@@ -93,8 +94,10 @@
         </tr>
       </table>
       <br>
+      <label for="comments">Comments about the presentation:</label> <br>
+      <br>
+      <textarea id="comments" rows="3" cols="100" maxlength="65"></textarea><br>
       <input type="submit" value="Submit">
       </form>
-      </div>
    </body>
 </html>
