@@ -20,7 +20,7 @@
       <div class="box">
          <form action="popGroupInfo"> 
             <label for="groupID">Enter the group ID number:</label>
-            <input type="number" id="groupID" name="groupID">
+            <input type="number" min="1" id="groupID" name="groupID">
             <br><br>
             <label for="student1">Enter student 1's e-mail:</label>
             <input type="email" id="student1" name="student1">
@@ -59,7 +59,7 @@
                <td>Display is organized, and sentences are complete. Some illustrations are incomplete.</td>
                <td>Display is well organized, and sentences are complete. All illustrations are complete.</td>
                <td>
-                  <input type="number" id="displayScore">
+                  <input type="number" min="1" max="4" id="displayScore">
                </td>
             </tr>
             <tr>
@@ -69,7 +69,7 @@
                <td>Student presents all of the facts in order and the audience can understand.</td>
                <td>Student presents facts in a well thought out manner, and makes it enjoyable for the audience to listen.</td>
                <td>
-                  <input type="number" id="organizationScore">
+                  <input type="number" min="1" max="4" id="organizationScore">
                </td>
             </tr>
             <tr>
@@ -79,7 +79,7 @@
                <td>Student makes eyes contact with the audience most of the presentation with reference to the board.</td>
                <td>Student makes eyes contact with the audience for almost all of the presentation with little reference to the board.</td>
                <td>
-                  <input type="number" id="eyeContactScore">
+                  <input type="number" min="1" max="4" id="eyeContactScore">
                </td>
             </tr>
             <tr>
@@ -89,7 +89,7 @@
                <td>Student projects their voice. They speak clearly and the audience can hear and understand.</td>
                <td>Voice is clear and emergeing, using expression confidently.</td>
                <td>
-                  <input type="number" id="voiceScore">
+                  <input type="number" min="1" max="4" id="voiceScore">
                </td>
             </tr>
          </table>

@@ -3,7 +3,36 @@
    <head>
       <title>Create Event</title>
       <meta charset="UTF-8">
-      <script src=""></script>
+      <script type='text/javascript'>
+        function addMembers(){
+            // Generate a dynamic number of inputs
+            var number = document.getElementById("members").value;
+            // Get the element where the inputs will be added to
+            var container = document.getElementById("groupcontainer");
+
+            if(number > 6 || number <= 0){
+               alert("Please enter a valid value! (0-6)")
+            } else {
+               // Remove every children it had before
+               while (container.hasChildNodes()) {
+                  container.removeChild(container.lastChild);
+               }
+               for (i=0;i<number;i++){
+                  // Append a node with a random text
+                  container.appendChild(document.createTextNode("Student " + (i + 1) + "'s email: "));
+                  // Create an <input> element, set its type and name attributes
+                  var input = document.createElement("input");
+                  input.type = "email";
+                  input.name = "email" + i;
+                  input.id = "email" + i;
+                  container.appendChild(input);
+                  // Append a line break 
+                  container.appendChild(document.createElement("br"));
+                  container.appendChild(document.createElement("br"));
+               }
+            }
+        }
+    </script>
       <link rel="stylesheet" href="../styles/style.css">
    </head>
    <body>
@@ -24,21 +53,13 @@
          <label for="topic">Enter the group's topic:</label>
          <input type="text" id="topic" name="topic">
          <br><br>
-         <label for="email1">Student 1's email:</label>
-         <input type="email" id="email1" name="email1">
+         <input type="text" id="members" name="members" value=""> Number of members: (max. 6) 
+         <br>
+         <a href="#" id="fillmembers" onclick="addMembers()">Fill Group List</a>
          <br><br>
-         <label for="email2">Student 2's email:</label>
-         <input type="email" id="email2" name="email2">
-         <br><br>
-         <label for="email3">Student 3's email:</label>
-         <input type="email" id="email3" name="email3">
-         <br><br>
-         <label for="email4">Student 4's email:</label>
-         <input type="email" id="email4" name="email4">
-         <br><br>
-         <label for="email5">Student 5's email:</label>
-         <input type="email" id="email5" name="email5">
-         <br><br>
+         <div id="groupcontainer"/>
+
+         </div>
          <input type="submit" value="Create">
       </div>
    </body>
