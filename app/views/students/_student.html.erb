@@ -1,0 +1,24 @@
+<div id="<%= dom_id student %>">
+  <p>
+    <strong>BuckID:</strong>
+    <%= student.buckid %>
+  </p>
+
+  <p>
+    <strong>First Name:</strong>
+    <%= student.fname %>
+  </p>
+
+  <p>
+    <strong>Last Name:</strong>
+    <%= student.lname %>
+  </p>
+
+  <p>
+    <strong>Group:</strong>
+    <!-- v1: <%= student.group_id %> -->
+    <!-- v2: <%= student.group.name %> -->
+    <%= link_to student.group.name, student.group %>
+  </p>
+
+</div>
