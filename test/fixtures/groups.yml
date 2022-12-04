@@ -2,8 +2,6 @@
 
 one:
   name: MyString
-  github_org: MyString
 
 two:
   name: MyString
-  github_org: MyString

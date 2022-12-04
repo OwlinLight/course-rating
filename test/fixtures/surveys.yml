@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  score: 1
+  comment: MyText
+  submitted: false
+  event: one
+  audience: one
+  presenter: one
+
+two:
+  score: 1
+  comment: MyText
+  submitted: false
+  event: two
+  audience: two
+  presenter: two

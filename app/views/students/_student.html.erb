@@ -1,23 +1,17 @@
 <div id="<%= dom_id student %>">
   <p>
-    <strong>BuckID:</strong>
-    <%= student.buckid %>
+    <strong>Name:</strong>
+    <%= student&.user&.name %>
   </p>
 
   <p>
-    <strong>First Name:</strong>
-    <%= student.fname %>
-  </p>
-
-  <p>
-    <strong>Last Name:</strong>
-    <%= student.lname %>
+    <strong>User:</strong>
+    <%= student&.user&.id %>
   </p>
 
   <p>
     <strong>Group:</strong>
-    <!-- v1: <%= student.group_id %> -->
-    <!-- v2: <%= student.group.name %> -->
+    <%= student.group_id %>
     <%= link_to student.group.name, student.group %>
   </p>
 

@@ -12,26 +12,18 @@
   <% end %>
 
   <div>
-    <%= form.label :buckid, style: "display: block" %>
-    <%= form.number_field :buckid %>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :fname, style: "display: block" %>
-    <%= form.text_field :fname %>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
   </div>
 
   <div>
-    <%= form.label :lname, style: "display: block" %>
-    <%= form.text_field :lname %>
-  </div>
-
-  <div>
-    <!--
     <%= form.label :group_id, style: "display: block" %>
     <%= form.text_field :group_id %>
-    -->
-    <%= form.collection_select :group_id, Group.all, :id, :name %>
   </div>
 
   <div>

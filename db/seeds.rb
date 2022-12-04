@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+
+
+
 6.times do
-    group = Group.create!(name: Faker::Company.name,
-                          github_org: Faker::Internet.slug)
+    group = Group.create!(name: Faker::Company.name)
     5.times do
-      group.students.create!(buckid: Faker::Number.unique.number(digits: 9),
-                             fname: Faker::Name.first_name,
-                             lname: Faker::Name.last_name)
+      student = group.students.create!
+      user = User.create!(email: Faker::Internet.email, name: Faker::Name.first_name, password: Faker::Internet.password, student: student)
     end
   end
-  
