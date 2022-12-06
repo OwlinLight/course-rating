@@ -1,14 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Teachers</h1>
+<h1>Welcome Instructor/TA!</h1>
+
 
 <div id="teachers">
   <% @teachers.each do |teacher| %>
     <%= render teacher %>
     <p>
-      <%= link_to "Show this teacher", teacher %>
+      <%= link_to "Show this administrator panel", teacher %>
     </p>
   <% end %>
 </div>
 
+<h4>Not on the list?</h4>
 <%= link_to "New teacher", new_teacher_path %>
