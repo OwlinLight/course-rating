@@ -1,4 +1,6 @@
-<%= form_for @user do |f| %>
+<h1>Sign up</h1>
+
+<%= form_with model: @user do |f| %>
   <%= f.label :email %><br>
   <%= f.text_field :email %><br>
   <br>
@@ -8,5 +10,9 @@
   <%= f.label :type %><br>
   <%= f.select :type, options_for_select([['Student'], ['Teacher']]) %><br>
   <br>
-  <%= f.submit %>
+  <%= f.submit %> <%= link_to "Want to sign in?", login_path%>
+<% end %>
+
+<% if flash[:danger] && flash[:danger].present? %>
+  <div style="color: red"><%= flash[:danger] %></div>
 <% end %>

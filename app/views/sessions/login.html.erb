@@ -1,0 +1,11 @@
+<h1>Login</h1>
+
+<%= render 'form'%>
+
+<% if flash[:danger] && flash[:danger].present? %>
+  <div style="color: red"><%= flash[:danger] %></div>
+<% end %>
+
+<% if flash[:success] && flash[:success].present? %>
+  <div style="color: green"><%= flash[:success] %></div>
+<% end %>
