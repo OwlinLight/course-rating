@@ -10,13 +10,19 @@
   </p>
 
   <p>
-    <strong>Student:</strong>
-    <%= survey.student_id %>
+    <strong>Audience name:</strong>
+    <%= survey.student.name %>
   </p>
 
   <p>
     <strong>Presentation:</strong>
     <%= survey.presentation_id %>
+  </p>
+
+  <p>
+    <strong>Presentation name:</strong>
+    <%= survey.presentation.title %>
+    <%=  link_to survey.presentation.title, survey.presentation %>
   </p>
 
 </div>

@@ -4,7 +4,8 @@ class AddUsersTable < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :email
       t.string :password
-      t.string :type
+      # cannot be type as it is reserved
+      t.string :character
 
       t.timestamps
     end
