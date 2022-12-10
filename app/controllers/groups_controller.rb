@@ -1,6 +1,22 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[ show edit update destroy ]
 
+
+  def add_user
+    # Find the group with the given ID
+    group = Group.find(params[:id])
+
+    # Find the user with the given ID
+    user = User.find(params[:user_id])
+
+    # Add the user to the group
+    user.groups << group
+
+    # Save the changes to the database
+    user.save
+  end
+
+
   # GET /groups or /groups.json
   def index
     @groups = Group.all
@@ -8,6 +24,11 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
+    # Find the group with the given ID
+    @group = Group.find(params[:id])
+
+    # Find all users that belong to the group
+    @users = @group.users
   end
 
   # GET /groups/new

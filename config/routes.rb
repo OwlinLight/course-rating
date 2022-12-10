@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  get 'klasses/index'
+  get 'klasses/show'
+  get 'klasses/new'
+  get 'klasses/create'
+  get 'klasses/edit'
+  get 'klasses/update'
+  get 'klasses/destroy'
   resources :presentations
-  resources :classes
+  resources :klasses
   resources :surveys
   resources :events
   resources :teachers

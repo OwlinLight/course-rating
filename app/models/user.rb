@@ -4,7 +4,9 @@ class User < ApplicationRecord
 
   has_many :surveys, foreign_key: "student_id"
   has_many :presentations, through: :surveys
-  # belongs_to :group
+
+  belongs_to :groups, class_name: "Group", optional: true
+  validates :group, uniqueness: true, if: -> { groups.present? }
 
   # Include the has_secure_password method in the User model
   has_secure_password

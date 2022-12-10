@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_10_195412) do
-  create_table "classes", force: :cascade do |t|
-    t.string "name"
-    t.integer "teacher_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+ActiveRecord::Schema[7.0].define(version: 2022_12_10_210310) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.date "date"
@@ -36,6 +29,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_195412) do
     t.index ["users_id"], name: "index_groups_on_users_id"
   end
 
+  create_table "klasses", force: :cascade do |t|
+    t.string "name"
+    t.integer "teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "presentations", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -43,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_195412) do
     t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "group_id"
   end
 
   create_table "surveys", force: :cascade do |t|
@@ -63,10 +64,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_195412) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "classes", "users", column: "teacher_id"
-  add_foreign_key "events", "classes"
-  add_foreign_key "groups", "classes"
+  add_foreign_key "events", "klasses", column: "class_id"
+  add_foreign_key "groups", "klasses", column: "class_id"
   add_foreign_key "groups", "users", column: "users_id"
+  add_foreign_key "klasses", "users", column: "teacher_id"
   add_foreign_key "presentations", "events"
   add_foreign_key "presentations", "users", column: "student_id"
   add_foreign_key "surveys", "presentations"

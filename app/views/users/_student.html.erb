@@ -9,3 +9,13 @@
     </li>
   <%# end %>
 </ul>
+
+<h4>Don't see your class?</h4>  
+
+<% if @classes.try(:any?) %>
+  <% @classes.each do |klass| %>
+    <%= klass.name %>
+  <% end %>
+<% else %>
+  <p>No classes are currently available.</p>
+<% end %>

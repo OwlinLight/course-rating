@@ -1,0 +1,10 @@
+<h1>Klasses#index</h1>
+
+<div id="klasses">
+  <% @klasses.each do |klass| %>
+    <%= render klass %>
+    <p>
+      <%= link_to "Show this klass", klass %>
+    </p>
+  <% end %>
+</div>

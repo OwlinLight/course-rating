@@ -23,14 +23,24 @@
 
   <div>
     <%= form.label :student_id, style: "display: block" %>
-    <%= form.number_field :student_id %>
+    <%= form.text_field :current_user.name, disabled: true%>
+  </div>
+
+<% current_user = User.find(current_user_id) %>
+<% user_group = Group.where(student_id: current_user).first %>
+
+<%= current_user.name %> is a member of the <%= user_group.name %> group.
+
+  <div>
+    <%= form.label :group_id, style: "display: block" %>
+    <%= form.text_field :user_group, disabled: true%>
   </div>
 
   <div>
     <%= form.label :event_id, style: "display: block" %>
-    <%= form.number_field :event_id %>
+    <%#= form.number_field :event_id %>
+    <%= form.collection_select :event_id, Event.all, :id, :name %>
   </div>
-
   <div>
     <%= form.submit %>
   </div>
