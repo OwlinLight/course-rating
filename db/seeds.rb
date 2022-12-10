@@ -17,7 +17,7 @@
 # end
 
 6.times do
-  user = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email, password_digest: Faker::Internet.password, character: Faker::Boolean.boolean ? "student" : "teacher")
+  user = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email, password_digest: Faker::Internet.password, user_type: Faker::Boolean.boolean ? "Student" : "Teacher")
 end
 
 6.times do
