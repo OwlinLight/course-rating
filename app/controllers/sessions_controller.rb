@@ -35,4 +35,12 @@ class SessionsController < ApplicationController
       # Redirect the user to the login page
       redirect_to login_path
     end
+
+    def logout
+      # Clear the user's id from the session
+      session.delete(:user_id)
+  
+      # Redirect the user to the login page
+      redirect_to login_path
+    end
   end
