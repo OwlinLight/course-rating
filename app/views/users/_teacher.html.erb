@@ -1,11 +1,13 @@
 <h1>Welcome, Instructor</h1>
 
-<h2>Classes:</h2>
-<ul>
-  <%# Use 'klass' as class is reserved%>
-  <%# current_user.classes.each do |klass| %>
-    <li>
-      <%# link_to klass.name, klass %>
-    </li>
-  <%# end %>
-</ul>
+<h2>Your Classes:</h2>
+
+<% if @klasses.try(:any?) %>
+  <% @klasses.each do |klass| %>
+    <%= klass.name %>
+  <% end %>
+<% else %>
+  <p>No classes are currently available.</p>
+<% end %>
+
+<%= link_to "Create New Class", new_klass_path%>
