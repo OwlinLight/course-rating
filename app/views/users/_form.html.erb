@@ -5,8 +5,8 @@
   <%= f.label :password %><br>
   <%= f.password_field :password %><br>
   <br>
-  <%= f.label :type %><br>
-  <%= f.select :type, options_for_select([['Student'], ['Teacher']]) %><br>
+  <%= f.label :character %><br>
+  <%= f.select :character, options_for_select([['student'], ['teacher']]) %><br>
   <br>
   <%= f.submit %>
 <% end %>

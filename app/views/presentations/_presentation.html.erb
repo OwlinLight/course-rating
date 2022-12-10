@@ -21,10 +21,19 @@
 
   <p>
     <strong>Surveys related:</strong>
-    <p> avg_score: <%= presentation.surveys.map { |object| object.rating }.reduce(:+) / presentation.surveys.length%>
-    <% presentation.surveys.each do |survey| %>
-      <p> rating: <%= survey.rating%><p>
-      <p> comment:<%= link_to survey.comment, survey%><p>
+    <p> Avg_score: <%= presentation.surveys.map { |object| object.rating }.reduce(:+) / presentation.surveys.length%></p>
+    <% surveys =  presentation.surveys%>
+    <% positives = surveys.select{ |survey| survey.rating >= 5} %>
+    <% negatives = surveys.select{ |survey| survey.rating < 5} %>
+    <p> Positive comment(<%= positives.length%>): </p>
+    <% positives.each do |survey| %>
+      <p> rating: <%= survey.rating%></p>
+      <p> comment:<%= link_to survey.comment, survey%></p>
+    <% end %>
+  <p> Negative comment(<%=negatives.length %>): </p>
+    <% negatives.each do |survey| %>
+      <p> rating: <%= survey.rating%></p>
+      <p> comment:<%= link_to survey.comment, survey%></p>
     <% end %>
   </p>
 </div>

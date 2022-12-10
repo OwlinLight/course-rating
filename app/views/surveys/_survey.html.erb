@@ -11,7 +11,7 @@
 
   <p>
     <strong>Audience name:</strong>
-    <%= survey.student.name %>
+    <%=  link_to survey.student.name, survey.student %>
   </p>
 
   <p>
@@ -21,7 +21,6 @@
 
   <p>
     <strong>Presentation name:</strong>
-    <%= survey.presentation.title %>
     <%=  link_to survey.presentation.title, survey.presentation %>
   </p>
 

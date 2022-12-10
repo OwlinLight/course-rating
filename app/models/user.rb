@@ -10,11 +10,11 @@ class User < ApplicationRecord
   has_secure_password
 
   def teacher?
-    self.type == 'teacher'
+    self.character == 'teacher'
   end
 
   def student?
-    self.type == 'student'
+    self.character == 'student'
   end
 
 
