@@ -8,11 +8,4 @@
 
 
 
-
-6.times do
-    group = Group.create!(name: Faker::Company.name)
-    5.times do
-      student = group.students.create!
-      user = User.create!(email: Faker::Internet.email, name: Faker::Name.first_name, password: Faker::Internet.password, student: student)
-    end
-  end
+#

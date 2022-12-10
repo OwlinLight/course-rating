@@ -29,8 +29,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_232823) do
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.integer "class_id"
+    t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "users_id"
+    t.index ["users_id"], name: "index_groups_on_users_id"
   end
 
   create_table "presentations", force: :cascade do |t|
@@ -63,6 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_232823) do
   add_foreign_key "classes", "users", column: "teacher_id"
   add_foreign_key "events", "classes"
   add_foreign_key "groups", "classes"
+  add_foreign_key "groups", "users", column: "users_id"
   add_foreign_key "presentations", "events"
   add_foreign_key "presentations", "users", column: "student_id"
   add_foreign_key "surveys", "presentations"

@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Events</h1>
+<h1>Class Name</h1>
+
+<h2>Current Events</h2>
 
 <div id="events">
   <% @events.each do |event| %>
@@ -10,5 +12,26 @@
     </p>
   <% end %>
 </div>
+
+<%# if current_user.type == "student"%>
+  <h2>Submit Presentation For This Event:</h2>
+  <%# <%= form_with(model: @presentation, url: klass_event_presentations_path(@klass, @event), method: :post) do |form| %>
+    <%# <%= form.hidden_field :group_id, value: current_user.group_id %>
+    <%# <%= form.label :title %> 
+    <%# <%= form.text_field :title %> 
+    <%# <%= form.label :description %> 
+    <%# <%= form.text_area :description %> 
+    <%# <%= form.label :file %> 
+    <%# <%= form.file_field :file %> 
+    <%# <%= form.submit "Submit" %> 
+  <%# <% end %> 
+<%# <% end %> 
+
+<%# if current_user.type == "teacher"%>
+  <h2>Create New Event:</h2>
+  <%# link_to "Create Event", new_event_path(klass_id: klass.id) %>
+<%# <% end %> 
+
+
 
 <%= link_to "New event", new_event_path %>

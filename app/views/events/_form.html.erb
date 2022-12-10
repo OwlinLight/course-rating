@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <%= form.hidden_field :class_id, value: params[:class_id] %>
+  
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
@@ -19,11 +21,6 @@
   <div>
     <%= form.label :description, style: "display: block" %>
     <%= form.text_field :description %>
-  </div>
-
-  <div>
-    <%= form.label :class_id, style: "display: block" %>
-    <%= form.number_field :class_id %>
   </div>
 
   <div>
