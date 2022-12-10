@@ -12,8 +12,8 @@
   <% end %>
 
   <div>
-    <%= form.label :score, style: "display: block" %>
-    <%= form.number_field :score %>
+    <%= form.label :rating, style: "display: block" %>
+    <%= form.number_field :rating %>
   </div>
 
   <div>
@@ -22,23 +22,13 @@
   </div>
 
   <div>
-    <%= form.label :submitted, style: "display: block" %>
-    <%= form.check_box :submitted %>
+    <%= form.label :student_id, style: "display: block" %>
+    <%= form.number_field :student_id %>
   </div>
 
   <div>
-    <%= form.label :event_id, style: "display: block" %>
-    <%= form.text_field :event_id %>
-  </div>
-
-  <div>
-    <%= form.label :audience_id, style: "display: block" %>
-    <%= form.text_field :audience_id %>
-  </div>
-
-  <div>
-    <%= form.label :presenter_id, style: "display: block" %>
-    <%= form.text_field :presenter_id %>
+    <%= form.label :presentation_id, style: "display: block" %>
+    <%= form.number_field :presentation_id %>
   </div>
 
   <div>

@@ -17,7 +17,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
 
   test "should create survey" do
     assert_difference("Survey.count") do
-      post surveys_url, params: { survey: { audience_id: @survey.audience_id, comment: @survey.comment, event_id: @survey.event_id, presenter_id: @survey.presenter_id, score: @survey.score, submitted: @survey.submitted } }
+      post surveys_url, params: { survey: { comment: @survey.comment, presentation_id: @survey.presentation_id, rating: @survey.rating, student_id: @survey.student_id } }
     end
 
     assert_redirected_to survey_url(Survey.last)
@@ -34,7 +34,7 @@ class SurveysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update survey" do
-    patch survey_url(@survey), params: { survey: { audience_id: @survey.audience_id, comment: @survey.comment, event_id: @survey.event_id, presenter_id: @survey.presenter_id, score: @survey.score, submitted: @survey.submitted } }
+    patch survey_url(@survey), params: { survey: { comment: @survey.comment, presentation_id: @survey.presentation_id, rating: @survey.rating, student_id: @survey.student_id } }
     assert_redirected_to survey_url(@survey)
   end
 

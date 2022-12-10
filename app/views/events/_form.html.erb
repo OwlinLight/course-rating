@@ -12,13 +12,18 @@
   <% end %>
 
   <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.datetime_field :date %>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
   </div>
 
   <div>
     <%= form.label :class_id, style: "display: block" %>
-    <%= form.text_field :class_id %>
+    <%= form.number_field :class_id %>
   </div>
 
   <div>

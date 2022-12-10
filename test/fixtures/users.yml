@@ -3,11 +3,9 @@
 one:
   email: MyString
   password: MyString
-  class: one
-  group: one
+  name: MyString
 
 two:
   email: MyString
   password: MyString
-  class: two
-  group: two
+  name: MyString

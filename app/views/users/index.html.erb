@@ -1,9 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1 style="font-size: 25px">Evaluation of Class Presentations</h1>
+<h1>Users</h1>
 
-<hr class ="line">
-<h3>Create your user!</h3>
-<%= button_to "New user", new_user_path, method: :get %>
-<hr class ="line">
-<img src="../resources/OSU.png" alt="osulogo">
+<div id="users">
+  <% @users.each do |user| %>
+    <%= render user %>
+    <p>
+      <%= link_to "Show this user", user %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New user", new_user_path %>

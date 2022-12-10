@@ -1,0 +1,20 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Hello</strong>
+    <%= user.email %>
+  </p>
+
+  <hr class ="line">
+  <div class="box">
+      <h2 style="font-size: 20px" class = "loginPrompt">
+      Please click on your current status:</h1>
+      <%= button_to "Join Students", students_path, method: :get%>
+      <%= button_to "Join Teachers", teachers_path, method: :get%>
+  </div>
+  <hr class ="line">
+  <img src="../resources/OSU.png" alt="osulogo">
+  <hr class ="line">
+
+
+
+</div>

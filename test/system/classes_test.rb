@@ -14,6 +14,7 @@ class ClassesTest < ApplicationSystemTestCase
     visit classes_url
     click_on "New class"
 
+    fill_in "Name", with: @class.name
     fill_in "Teacher", with: @class.teacher_id
     click_on "Create Class"
 
@@ -25,6 +26,7 @@ class ClassesTest < ApplicationSystemTestCase
     visit class_url(@class)
     click_on "Edit this class", match: :first
 
+    fill_in "Name", with: @class.name
     fill_in "Teacher", with: @class.teacher_id
     click_on "Update Class"
 

@@ -14,12 +14,10 @@ class SurveysTest < ApplicationSystemTestCase
     visit surveys_url
     click_on "New survey"
 
-    fill_in "Audience", with: @survey.audience_id
     fill_in "Comment", with: @survey.comment
-    fill_in "Event", with: @survey.event_id
-    fill_in "Presenter", with: @survey.presenter_id
-    fill_in "Score", with: @survey.score
-    check "Submitted" if @survey.submitted
+    fill_in "Presentation", with: @survey.presentation_id
+    fill_in "Rating", with: @survey.rating
+    fill_in "Student", with: @survey.student_id
     click_on "Create Survey"
 
     assert_text "Survey was successfully created"
@@ -30,12 +28,10 @@ class SurveysTest < ApplicationSystemTestCase
     visit survey_url(@survey)
     click_on "Edit this survey", match: :first
 
-    fill_in "Audience", with: @survey.audience_id
     fill_in "Comment", with: @survey.comment
-    fill_in "Event", with: @survey.event_id
-    fill_in "Presenter", with: @survey.presenter_id
-    fill_in "Score", with: @survey.score
-    check "Submitted" if @survey.submitted
+    fill_in "Presentation", with: @survey.presentation_id
+    fill_in "Rating", with: @survey.rating
+    fill_in "Student", with: @survey.student_id
     click_on "Update Survey"
 
     assert_text "Survey was successfully updated"

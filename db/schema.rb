@@ -10,70 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_04_025619) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_09_232823) do
   create_table "classes", force: :cascade do |t|
-    t.integer "teacher_id", null: false
+    t.string "name"
+    t.integer "teacher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["teacher_id"], name: "index_classes_on_teacher_id"
   end
 
   create_table "events", force: :cascade do |t|
-    t.datetime "date"
-    t.integer "class_id", null: false
+    t.string "name"
+    t.date "date"
+    t.integer "class_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["class_id"], name: "index_events_on_class_id"
   end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
+    t.integer "class_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "students", force: :cascade do |t|
-    t.integer "group_id", null: false
+  create_table "presentations", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "student_id"
+    t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_students_on_group_id"
   end
 
   create_table "surveys", force: :cascade do |t|
-    t.integer "score"
-    t.text "comment"
-    t.boolean "submitted"
-    t.integer "event_id", null: false
-    t.integer "audience_id", null: false
-    t.integer "presenter_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["audience_id"], name: "index_surveys_on_audience_id"
-    t.index ["event_id"], name: "index_surveys_on_event_id"
-    t.index ["presenter_id"], name: "index_surveys_on_presenter_id"
-  end
-
-  create_table "teachers", force: :cascade do |t|
+    t.integer "rating"
+    t.string "comment"
+    t.integer "student_id"
+    t.integer "presentation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
     t.string "name"
+    t.string "email"
     t.string "password"
-    t.integer "student_id"
-    t.integer "teacher_id"
+    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_users_on_student_id"
-    t.index ["teacher_id"], name: "index_users_on_teacher_id"
   end
 
-  add_foreign_key "classes", "teachers"
+  add_foreign_key "classes", "users", column: "teacher_id"
   add_foreign_key "events", "classes"
-  add_foreign_key "students", "groups"
-  add_foreign_key "surveys", "audiences"
-  add_foreign_key "surveys", "events"
-  add_foreign_key "surveys", "presenters"
+  add_foreign_key "groups", "classes"
+  add_foreign_key "presentations", "events"
+  add_foreign_key "presentations", "users", column: "student_id"
+  add_foreign_key "surveys", "presentations"
+  add_foreign_key "surveys", "users", column: "student_id"
 end
