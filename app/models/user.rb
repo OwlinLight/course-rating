@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: { message: "This email address is already in use. Please choose a different one." }
 
-  has_many :surveys
+  has_many :surveys, foreign_key: "student_id"
   has_many :presentations, through: :surveys
   # belongs_to :group
 
