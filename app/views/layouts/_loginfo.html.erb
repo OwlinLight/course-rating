@@ -1,10 +1,12 @@
 <br>
 <div>
-  <strong> Hello </strong>
-  <%= current_user.name %>
-  <br>
-  <%= link_to  "Back to main page", main_path%> |
-  <%= link_to "Edit your account", edit_user_path(current_user) %> |
-  <%= link_to "Log Out", logout_path, method: :delete %>
-  <hr class ="line">
+  <% if current_user.present? %>
+    <strong> Hello </strong>
+    <%= current_user.name %>
+    <br>
+    <%= link_to  "Back to main page", main_path%> |
+    <%= link_to "Edit your account", edit_user_path(current_user) %> |
+    <%= link_to "Log Out", logout_path, method: :delete %>
+    <hr class ="line">
+  <% end %>
 </div>
