@@ -4,8 +4,7 @@ class UsersController < ApplicationController
 
   def joinClass
     @student = current_user
-    @klass.users << @student
-
+    @klass = @student.klass
     redirect_to @klass
   end
 
