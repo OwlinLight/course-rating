@@ -11,9 +11,6 @@
 <% end %>
 
 
-
-
-
 <% surveys = current_user.surveys %>
   <p>survey records: </p>
   <%= surveys.length == 0 ? "No survey records" : "You got #{surveys.length} surveys" %>

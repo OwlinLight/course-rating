@@ -26,6 +26,22 @@ body{
     padding-top: 5rem;
 }
 
+.pos{
+    font-size: large;
+    color: darkgreen;
+}
+
+nav{
+  position: fixed;
+  top: 0;
+  left: 10;
+}
+
+.neg{
+    font-size: large;
+    color: darkred;
+}
+
 a{
     color: red;
 }
