@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
         # Save the user's id in the session
         session[:user_id] = user.id
   
-        redirect_to users_url + "/#{current_user.id}"
+        redirect_to main_path
       else
         # Display an error message
         flash.now[:danger] = 'Invalid email/password combination'

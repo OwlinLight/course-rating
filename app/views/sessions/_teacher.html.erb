@@ -1,0 +1,19 @@
+<h1>Welcome, Instructor</h1>
+
+<h2>Your Classes:</h2>
+
+
+<% @klasses = Klass.where(teacher_id: current_user.id) %>
+
+<%= render template: 'klasses/index' %>
+
+<% if @klasses.empty? %>
+
+  <p>No classes are currently available.</p>
+
+<% end %>
+
+
+
+
+<%= link_to "Create New Class", new_klass_path%>
