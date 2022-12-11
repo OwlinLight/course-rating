@@ -18,7 +18,7 @@
   <br>
   <div>
     <%= form.label :teacher_id, style: "display: block" %>
-    <%= form.collection_select :teacher_id, User.where(user_type: "Teacher"), :id, :name %>
+    <%= form.collection_select :teacher_id, User.where(id: current_user.id), :id, :name %>
   </div>
   <br>
   <div>

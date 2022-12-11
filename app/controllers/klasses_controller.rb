@@ -8,6 +8,7 @@ class KlassesController < ApplicationController
 
   # GET /klasses/1 or /klasses/1.json
   def show
+    
   end
 
   # GET /klasses/new
@@ -22,39 +23,25 @@ class KlassesController < ApplicationController
   # POST /klasses or /klasses.json
   def create
     @klass = Klass.new(klass_params)
+    @klass.save
 
-    respond_to do |format|
-      if @klass.save
-        format.html { redirect_to klass_url(@klass), notice: "Klass was successfully created." }
-        format.json { render :show, status: :created, location: @klass }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @klass.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to users_url + "/#{current_user.id}"
+
   end
 
   # PATCH/PUT /klasses/1 or /klasses/1.json
   def update
-    respond_to do |format|
-      if @klass.update(klass_params)
-        format.html { redirect_to klass_url(@klass), notice: "Klass was successfully updated." }
-        format.json { render :show, status: :ok, location: @klass }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @klass.errors, status: :unprocessable_entity }
-      end
-    end
+    @klass.update(klass_params)
+
+
+    redirect_to users_url + "/#{current_user.id}"
   end
 
   # DELETE /klasses/1 or /klasses/1.json
   def destroy
     @klass.destroy
 
-    respond_to do |format|
-      format.html { redirect_to klasses_url, notice: "Klass was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to users_url + "/#{current_user.id}"
   end
 
   private

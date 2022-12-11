@@ -1,12 +1,9 @@
 <div id="<%= dom_id klass %>">
   <p>
-    <strong>Name:</strong>
-    <%= klass.name %>
+    <strong>Name: <%= klass.name %></strong>
+    
+    <br>
+    <h4>Instructor: <%= User.find(klass.teacher_id).name%></h4>
+    
   </p>
-
-  <p>
-    <strong>Teacher:</strong>
-    <%= klass.teacher_id %>
-  </p>
-
 </div>
