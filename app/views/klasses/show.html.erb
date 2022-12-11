@@ -3,10 +3,10 @@
   <% render 'klass', klass: @klass%>
 <% else %>
   <div>
-    <h2><%= @klass.name %></h2>
+    <h2><%= klass.name %></h2>
 
     <%= link_to "Edit this class", edit_klass_path(@klass) %> |
-    <%= link_to 'Go back', users_url + "/#{current_user.id}" %>
+    <%= link_to 'Go back', main_path %>
 
     <%= button_to "Destroy this class", @klass, method: :delete %>
     <hr class ="line">

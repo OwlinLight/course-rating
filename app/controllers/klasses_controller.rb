@@ -1,5 +1,11 @@
 class KlassesController < ApplicationController
-  before_action :set_klass, only: %i[ show edit update destroy ]
+  
+  def joinClass
+    @student = Student.find(params[:id])
+    @klass = @student.klass
+    redirect_to @klass
+  end
+
 
   # GET /klasses or /klasses.json
   def index

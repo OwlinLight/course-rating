@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   get 'klasses/update'
   get 'klasses/destroy'
   resources :presentations
-  resources :klasses
+  resources :klasses do
+    member do
+      post :join
+    end
+  end
   resources :surveys
   resources :events
   resources :teachers
@@ -29,4 +33,7 @@ Rails.application.routes.draw do
   post "/", to: "sessions#create", via: :post
   post "/sessions", to: "sessions#create"
   post '/signup', to: 'sessions#login'
+
+  get '/klasses/:id/join', to: 'users#joinClass'
+
 end

@@ -13,8 +13,12 @@
   <body>
   <%= render "layouts/navbar" %>
   <%= render "layouts/loginfo" %>
+    <img class="osulogo" src="assets/osulogo.png" alt="">
+    <h1 style="font-size: 25px">Evaluation of Class Presentations</h1>
+    <hr class="line">
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <hr class ="line">
   </body>
 </html>
