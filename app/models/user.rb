@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :surveys, foreign_key: "student_id"
   has_many :presentations, through: :surveys
 
-  belongs_to :klass
+  # belongs_to :klass
 
   belongs_to :groups, class_name: "Group", optional: true
   validates :group, uniqueness: true, if: -> { groups.present? }
