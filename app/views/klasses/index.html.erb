@@ -4,7 +4,7 @@
     <% @klasses.each do |klass| %>
       <%= render klass %>
       <p>
-        <%= link_to "Join this class", klass %>
+        <%= link_to "Join this class", join_klass_path(klass.id), method: :post, confirm: 'Are you sure?' %>
       </p>
     <% end %>
   </div>
