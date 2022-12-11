@@ -1,9 +1,22 @@
+<% if current_user.user_type == "Student" %>
+  <h2>Class List</h2>
+  <div id="klasses">
+    <% @klasses.each do |klass| %>
+      <%= render klass %>
+      <p>
+        <%= link_to "Join this class", klass %>
+      </p>
+    <% end %>
+  </div>
 
-<div id="klasses">
-  <% @klasses.each do |klass| %>
-    <%= render klass %>
-    <p>
-      <%= link_to "Show this class", klass %>
-    </p>
-  <% end %>
-</div>
+<% else %>
+  <div id="klasses">
+    <% @klasses.each do |klass| %>
+      <%= render klass %>
+      <p>
+        <%= link_to "Show this class", klass %>
+      </p>
+    <% end %>
+  </div>
+
+<% end %>

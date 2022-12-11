@@ -1,8 +1,7 @@
 <h1>Welcome, Student</h1>
 
+<%= link_to "Join a class!", klasses_path%>
 <h2>Classes:</h2>
-
-
 <% if @classes.try(:any?) %>
   <% @classes.each do |klass| %>
     <%= klass.name %>
@@ -11,7 +10,7 @@
   <p>No classes are currently available.</p>
 <% end %>
 
-<h4>Don't see your class?</h4>  
+
 
 
 
