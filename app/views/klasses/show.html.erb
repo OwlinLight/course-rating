@@ -1,18 +1,21 @@
+<% klass_id = params[:id]%>
+<% @klass = Klass.find(klass_id)%>
+<% klass = @klass%>
+
 <% if current_user.user_type == "Student" %>
-  <% klass = @klass%>
   <% render 'klass', klass: @klass%>
 <% else %>
   <div>
     <h2><%= klass.name %></h2>
 
-    <%= link_to "Edit this class", edit_klass_path(@klass) %> |
+    <%= link_to "Edit this class", edit_klass_path(klass) %> |
     <%= link_to 'Go back', main_path %>
 
-    <%= button_to "Destroy this class", @klass, method: :delete %>
+    <%= button_to "Destroy this class", klass, method: :delete %>
     <hr class ="line">
   </div>
 
-  <% @events = Event.where(class_id: @klass.id)%>
+  <% @events = Event.where(class_id: klass.id)%>
   <%= render template: "events/index"%>
 <% end %>
 

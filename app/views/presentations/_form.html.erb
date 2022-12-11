@@ -26,10 +26,10 @@
     <%= form.text_field :current_user.name, disabled: true%>
   </div>
 
-<% current_user = User.find(current_user_id) %>
-<% user_group = Group.where(student_id: current_user).first %>
 
-<%= current_user.name %> is a member of the <%= user_group.name %> group.
+  <% user_group = Group.where(student_id: current_user).first %>
+
+
 
   <div>
     <%= form.label :group_id, style: "display: block" %>

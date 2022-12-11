@@ -31,7 +31,7 @@ class KlassesController < ApplicationController
     @klass = Klass.new(klass_params)
     @klass.save
 
-    redirect_to users_url + "/#{current_user.id}"
+    redirect_to main_path
 
   end
 
@@ -40,14 +40,14 @@ class KlassesController < ApplicationController
     @klass.update(klass_params)
 
 
-    redirect_to users_url + "/#{current_user.id}"
+    redirect_to main_path
   end
 
   # DELETE /klasses/1 or /klasses/1.json
   def destroy
     @klass.destroy
 
-    redirect_to users_url + "/#{current_user.id}"
+    redirect_to main_path
   end
 
   private
