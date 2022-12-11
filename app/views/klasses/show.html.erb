@@ -1,9 +1,8 @@
 <% klass_id = params[:id]%>
-<% klass = Klass.find(klass_id)%>
-
+<% @klass = Klass.find(klass_id)%>
+<% klass = @klass%>
 
 <% if current_user.user_type == "Student" %>
-  <% klass = @klass%>
   <% render 'klass', klass: @klass%>
 <% else %>
   <div>

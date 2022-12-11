@@ -1,5 +1,5 @@
 <%= form_with(model: klass) do |form| %>
-  <% if klass.errors.any? %>
+  <% if @klass.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(klass.errors.count, "error") %> prohibited this class from being saved:</h2>
 
