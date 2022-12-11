@@ -24,6 +24,8 @@ end
   presentation = Presentation.create!(title: Faker::Book.title, description: Faker::Lorem.paragraph)
 end
 
+
+
 users = User.all
 presentations = Presentation.all
 
@@ -33,4 +35,9 @@ presentations = Presentation.all
   survey = Survey.create!(rating: Faker::Number.between(from: 1, to: 10), comment: Faker::Lorem.sentence, student: user, presentation: presentation)
 end
 
+# Klass seeds
+course = ["English", "CSE", "History"]
+6.times do
+  klass = Klass.create!(name: course.sample + Faker::Number.number(digits: 3).to_s, teacher: users.sample)
+end
 
