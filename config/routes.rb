@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'sessions#signup'
   get 'login', to: 'sessions#login'
+  get 'main', to: 'sessions#main'
 
   get '/logout', to: "sessions#logout", as: "logout"
   post "/", to: "sessions#create", via: :post

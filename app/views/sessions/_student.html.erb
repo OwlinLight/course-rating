@@ -1,0 +1,24 @@
+<h1>Welcome, Student</h1>
+
+<%= link_to "Join a class!", klasses_path%>
+<h2>Classes:</h2>
+<% if @classes.try(:any?) %>
+  <% @classes.each do |klass| %>
+    <%= klass.name %>
+  <% end %>
+<% else %>
+  <p>No classes are currently available.</p>
+<% end %>
+
+
+
+
+
+<% surveys = current_user.surveys %>
+  <p>survey records: </p>
+  <%= surveys.length == 0 ? "No survey records" : "You got #{surveys.length} surveys" %>
+  <%= link_to "New survey", new_survey_path %>
+  <% surveys.each do |survey|%>
+    <p> rating: <%= survey.rating%></p>
+    <p> comment:<%= link_to survey.comment, survey%></p>
+  <% end %>
